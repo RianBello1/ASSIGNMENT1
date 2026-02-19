@@ -99,5 +99,21 @@ button {
 }
 
 button:hover {
-    background-color: #005a91; 
+    background-color: #87BAAB; 
 }
+
+.dark-mode {
+    background-color:#222;
+    color:rgb(167, 144, 144);
+    body { background-color: #2D142C; color: #EAD0CA; }
+.card { background: #3D1D35; border-color: #BA8791; }
+h1, h2, a { color: #BA8791; }
+button { background-color: #87BAAB; color: #2D142C; }
+button:hover { background-color: #BA8791; }
+input, textarea { background-color: #1F0B1E; border-color: #653058; color: #f4eade; }
+th { background-color: #653058; color: #BA8791; }
+}    
+
+.hidden {
+    display:none;
+    }

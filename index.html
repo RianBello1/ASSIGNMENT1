@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <link rel="stylesheet" href="css/styles.css">
-<meta charset="UTF-8">Submit</button>
+
 <title>Personal Online CV</title>
 </head>
 <body>
@@ -10,6 +10,7 @@
 <section class="card">
 <h1>Rian Nathaniel V. Bello</h1>
 <p> IT Student | Web Systems and Technologies </p>
+<button id="themeToggle">Toggle Dark Mode</button>
 </header>
 <p>Email:
 <a href="bello.riannathaniel@gmail.com@example.com">bello.riannathaniel@gmail.com</a><br>
@@ -23,9 +24,10 @@ GitHub:
 <section class="card">
 <h2>About Me</h2>
 <p>Welcome to my personal CV webpage. I am a creative professional with a passion for arts and technology.</p>
-<img src="images/profile.jpg" alt="Profile photo">
+<img src="Images/profile.jpg" alt="Profile photo">
 </section>
-<section class="card">
+<button id="toggleSkills">Show/Hide Skills</button>
+<section class="card" id="skillsSection">
 <h2>Skills</h2>
 <ul>
 <li>DJing</li>
@@ -75,17 +77,19 @@ border-collapse: collapse;}
             </tr>
 </table>
 <section class="card">
+
 <h2>Contact Me</h2>
 <form>
-<input type="text" placeholder="Name"><br><br>
-<input type="email" placeholder="Email"><br><br>
+<input type="text" id="name" placeholder="Name">
+<input type="email" id="email" placeholder="Email">
 <textarea placeholder="Message"></textarea><br><br>
-<button type="submit">Send</button>
+<button type="submit" id="submitBtn">Send</button>
 </form>
 </section>
 </main>
 <footer>
 <p>&copy; 2026 Rian Bello. All rights reserved. </p>
 </footer>
+<script src="js/script.js"></script> 
 </body>
 </html>

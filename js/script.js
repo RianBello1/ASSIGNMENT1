@@ -29,7 +29,6 @@ skillsSection.classList.toggle("hidden");
 const themeBtn = document.getElementById("themeToggle");
 
 themeBtn.addEventListener("click", () => {
-  // 1. Toggle the dark-mode class on the body
   document.body.classList.toggle("Dark-mode");
  if (document.body.classList.contains("Dark-mode")) {
     themeBtn.textContent = "Toggle light mode";

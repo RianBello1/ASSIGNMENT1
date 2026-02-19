@@ -10,7 +10,7 @@ body {
     background-color: #f4eade; 
     color: #333;
     padding: 20px;
-    /* This ensures everything stays centered */
+
     display: flex;
     flex-direction: column;
     align-items: center;

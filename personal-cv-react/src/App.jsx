@@ -1,10 +1,12 @@
 import { useState } from "react";
-import Header from "./components/header.jsx"; 
-import About from "./components/about.jsx";
-import Skills from "./components/skills.jsx";
-import Education from "./components/education.jsx";
-import Contact from "./components/contact.jsx";
+// 1. Ensure these filenames match your actual files EXACTLY (e.g., Header.jsx vs header.jsx)
+import Header from "./components/header"; 
+import About from "./components/about";
+import Skills from "./components/skills";
+import Education from "./components/education";
+import Contact from "./components/contact";
 import './index.css';
+
 function App() {
   const [darkMode, setDarkMode] = useState(false);
 
@@ -17,11 +19,11 @@ function App() {
           isDarkMode={darkMode} 
         />
         <main>
-	  <header />
-          <about />
-          <skills />
-          <education />
-          <contact />
+          {/* 2. Components MUST start with a Capital Letter in JSX */}
+          <About />
+          <Skills />
+          <Education />
+          <Contact />
         </main>
         <footer>
           <p>&copy; 2026 Rian Bello. All rights reserved.</p>

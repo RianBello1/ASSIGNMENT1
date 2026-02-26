@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Header from "./components/header";
+import Header from "./components/header"; 
 import About from "./components/about";
 import Skills from "./components/skills";
 import Education from "./components/education";
@@ -12,6 +12,7 @@ function App() {
   return (
     <div className={`theme-wrapper ${darkMode ? "dark-mode" : "light-mode"}`}>
       <div className="container">
+        {}
         <Header toggleDark={() => setDarkMode(!darkMode)} />
         <main>
           <About />
@@ -28,5 +29,3 @@ function App() {
 }
 
 export default App;
-
-

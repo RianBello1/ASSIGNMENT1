@@ -17,10 +17,11 @@ function App() {
           isDarkMode={darkMode} 
         />
         <main>
-          <About />
-          <Skills />
-          <Education />
-          <Contact />
+	  <header />
+          <about />
+          <skills />
+          <education />
+          <contact />
         </main>
         <footer>
           <p>&copy; 2026 Rian Bello. All rights reserved.</p>

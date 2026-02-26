@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Header from "./components/header"; 
-import About from "./components/about";
-import Skills from "./components/skills";
-import Education from "./components/education";
-import Contact from "./components/contact";
+import Header from "./components/header.jsx"; 
+import About from "./components/about.jsx";
+import Skills from "./components/skills.jsx";
+import Education from "./components/education.jsx";
+import Contact from "./components/contact.jsx";
 import './index.css';
 
 function App() {
@@ -12,7 +12,6 @@ function App() {
   return (
     <div className={`theme-wrapper ${darkMode ? "dark-mode" : "light-mode"}`}>
       <div className="container">
-        {}
         <Header toggleDark={() => setDarkMode(!darkMode)} />
         <main>
           <About />

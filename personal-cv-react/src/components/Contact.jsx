@@ -6,7 +6,7 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Thank you, ${name}! Your message has been sent (Logic handled by React).`);
+    alert(`Thank you, ${name}! Your message has been sent.`);
   };
 
   return (

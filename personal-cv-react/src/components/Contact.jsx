@@ -1,21 +1,40 @@
+import { useState } from "react";
+
 function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevents the page from refreshing on submit
-    alert("Message sent! (Logic handled by React)");
+    e.preventDefault();
+    alert(`Thank you, ${name}! Your message has been sent (Logic handled by React).`);
   };
 
   return (
     <section className="card">
-      <h2>Contact Mee</h2>
+      <h2>Contact Me</h2>
       <form onSubmit={handleSubmit}>
-        <input type="text" id="name" placeholder="Name" />
-        <input type="email" id="email" placeholder="Email" />
+        <input 
+          type="text" 
+          placeholder="Name" 
+          value={name} 
+          onChange={(e) => setName(e.target.value)} 
+          required
+        />
+        <input 
+          type="email" 
+          placeholder="Email" 
+          value={email} 
+          onChange={(e) => setEmail(e.target.value)} 
+          required
+        />
         <textarea placeholder="Message"></textarea>
         <br /><br />
-        <button type="submit" id="submitBtn">Send</button>
+        <button type="submit">Send</button>
       </form>
     </section>
   );
 }
 
 export default Contact;
+
+

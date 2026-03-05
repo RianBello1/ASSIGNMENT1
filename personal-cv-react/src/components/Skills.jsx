@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Skills() {
+function Skills({ skills }) {
   const [visible, setVisible] = useState(true);
 
   return (
@@ -11,15 +11,9 @@ function Skills() {
       </button>
       {visible && (
         <ul>
-          <li>DJing</li>
-          <li>Arts/Design</li>
-          <li>Vintage Computing</li>
-          <li>Web Development
-            <ul>
-              <li>Frontend (HTML, CSS, JavaScript)</li>
-              <li>Backend</li>
-            </ul>
-          </li>
+          {skills.map((skill, index) => (
+            <li key={index}>{skill}</li>
+          ))}
         </ul>
       )}
     </section>

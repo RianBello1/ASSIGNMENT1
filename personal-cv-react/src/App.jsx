@@ -4,6 +4,7 @@ import About from "./components/About.jsx";
 import Skills from "./components/Skills.jsx";
 import Education from "./components/Education.jsx";
 import Contact from "./components/Contact.jsx";
+import ContactList from "./components/ContactList.jsx"; 
 import './index.css';
 
 function App() {
@@ -26,7 +27,12 @@ function App() {
           <About />
           <Skills skills={skills} />
           <Education education={education} />
+          
+          {/* TASK 4: Contact Form */}
           <Contact />
+
+          {/* TASK 6: Display Stored Data */}
+          <ContactList /> 
         </main>
         <footer>
           <p>&copy; 2026 Rian Bello. All rights reserved.</p>
@@ -35,4 +41,5 @@ function App() {
     </div>
   );
 }
+
 export default App;

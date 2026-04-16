@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function Contact() {
-  // 1. Setup state for all form fields
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -9,7 +9,7 @@ function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // 2. Send data to your XAMPP PHP backend
+
     fetch("http://localhost/cv-api/process.php", {
       method: "POST",
       headers: {
@@ -23,10 +23,10 @@ function Contact() {
     })
       .then((res) => res.json())
       .then((data) => {
-        // 3. Improved logic: Check if message exists in the JSON response
+       
         if (data.message) {
           alert(data.message);
-          // Clear form on success
+     
           setName("");
           setEmail("");
           setMessage("");
@@ -80,3 +80,4 @@ function Contact() {
 }
 
 export default Contact;
+

@@ -1,15 +1,17 @@
 import { useState } from "react";
 
 function Contact() {
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
-
+    // Note: Verify if your folder is named "cv-api" or "Assignment1" 
+    // to match your C:\Users\gdk4n\Assignment1 path
     fetch("http://localhost/cv-api/process.php", {
       method: "POST",
       headers: {
@@ -23,20 +25,22 @@ function Contact() {
     })
       .then((res) => res.json())
       .then((data) => {
-       
         if (data.message) {
           alert(data.message);
-     
+          // Clear form on success
           setName("");
           setEmail("");
           setMessage("");
         } else {
-          alert("Unexpected error occurred.");
+          alert("Error: " + (data.error || "Unexpected response from server."));
         }
       })
       .catch((error) => {
         console.error("Error:", error);
-        alert("Server error: Make sure XAMPP Apache is running.");
+        alert("Server error: Ensure XAMPP (Apache & MySQL) is running.");
+      })
+      .finally(() => {
+        setIsSubmitting(false);
       });
   };
 
@@ -47,37 +51,42 @@ function Contact() {
         <div className="form-group">
           <input
             type="text"
-            placeholder="Name"
+            placeholder="Full Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
+            disabled={isSubmitting}
           />
         </div>
 
         <div className="form-group">
           <input
             type="email"
-            placeholder="Email"
+            placeholder="Email Address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            disabled={isSubmitting}
           />
         </div>
 
         <div className="form-group">
           <textarea
-            placeholder="Message"
+            placeholder="Your Message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             required
+            disabled={isSubmitting}
+            rows="5"
           ></textarea>
         </div>
 
-        <button type="submit">Send</button>
+        <button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? "Sending..." : "Send Message"}
+        </button>
       </form>
     </section>
   );
 }
 
 export default Contact;
-
